@@ -2,28 +2,41 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
 
-\title{Ejemplo}
+\title{Paltas}
 
 \begin{document}
 \begin{problemDescription}
-\lipsum[1-3]
+Todos hemos ido alguna vez a la feria a comprar paltas, ¿no?
+Cuando uno va a comprar paltas, dependiendo de cuanto hambre y paciencia tenga, uno puede escoger entre comprar paltas más maduras para comer el mismo día, o paltas que aún no están maduras para un par de días (o semanas) más adelante.
+
+Al igual que el resto de frutas, hay algunas paltas que se descomponen más rápido que otras. Modelaremos el estado de descomposición de las paltas como un natural $d_i$, donde 0 representa el estado de la palta justo después de comprarla y cualquier entero mayor a 0, indica cierto grado de madurez/descomposición.
+
+Supongamos que compramos una malla de $n$ paltas donde todas se encuentran en el mismo estado inicial $d_i = 0$ para todo $i \in \{1, ..., n\}$.
+
+Si denotamos $r_i$ como la tasa de descomposición de cada palta, podemos decir que en el tiempo $t$, la palta $i$-ésima presenta una descomposición de $t \cdot r_i$. Bajo este modelo, una palta se considera madura (se puede consumir) si su nivel de descomposición se encuentra dentro del rango $[k_{min}, k_{max}]$. Si es menor, la palta no se podrá consumir debido a que aún no madura y si es mayor, la palta se considerará podrida y por motivos sanitarios tampoco será posible consumirla.
+
+Dadas las tasas de descomposición de $n$ paltas, tu trabajo es responder a $q$ preguntas del siguiente tipo:
+¿Cuántas paltas se pueden consumir en el tiempo $x$?
 \end{problemDescription}
 
 \begin{inputDescription}
-\lipsum[1]
+La primera línea contiene 4 enteros $n$, $q$, $k_{min}$ y $k_{max}$ ($1 \leq n, q \leq 10^5$,  $0 \leq k_{min} \leq k_{max} \leq 10^9$,  $x \leq 10^9$) que indican la cantidad de paltas, el número de preguntas y los límites del rango de madurez aceptado.\\
+
+
+La segunda línea contiene $n$ enteros, las tasas de descomposición $r_i$. ($i \in \{1, \dots, n\}$)\\
+
+Luego vienen $q$ líneas, correspondientes a cada consulta $x_i$ ($i \in \{1, \dots, q\}$).
 \end{inputDescription}
 
 \begin{outputDescription}
-\lipsum[1]
+Imprimir $q$ líneas. La $i$-ésima de ellas, deberá contener el número de paltas dentro del rango $[k_{min}, k_{max}]$ en el tiempo $x_i$.
 \end{outputDescription}
 
 \begin{scoreDescription}
   \subtask{20}
-  Descripción Subtarea1
-  \subtask{30}
-  Descripción Subtarea2
+  Se probarán varios casos en donde $n, q \leq 10^3$.
   \subtask{50}
-  Descripción Subtarea3
+  Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}

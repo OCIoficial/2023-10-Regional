@@ -6,42 +6,107 @@
 
 \begin{document}
 \begin{problemDescription}
-Todos hemos ido alguna vez a la feria a comprar paltas, ¿no?
-Cuando uno va a comprar paltas, dependiendo de cuanto hambre y paciencia tenga, uno puede escoger entre comprar paltas más maduras para comer el mismo día, o paltas que aún no están maduras para un par de días (o semanas) más adelante.
+Francisca es fanática de las paltas.
+Las come al desayuno, al almuerzo y a la cena.
+Con pan, en una ensalada o con leche.
+A veces simplemente pela una palta y se las come a mascadas.
+Cada vez que va a la feria compra una malla entera para así tener suficientes paltas.
 
-Al igual que el resto de frutas, hay algunas paltas que se descomponen más rápido que otras. Modelaremos el estado de descomposición de las paltas como un natural $d_i$, donde 0 representa el estado de la palta justo después de comprarla y cualquier entero mayor a 0, indica cierto grado de madurez/descomposición.
+Comprar paltas es un proceso complejo.
+Dependiendo de cuándo quieres comerlas, debes elegir entre comprar paltas lo suficientemente maduras
+que estén listas para consumir o paltas que aún no han madurado lo suficiente para poder consumirlas
+en un par de días más.
+Más aún, como cualquier otra fruta, algunas paltas maduran más rápido que otras.
+Cada vez que va a la feria, Francisca tiene que pensar en todo esto y necesita un poco de ayuda
+para poder comprar paltas de forma más eficiente.
 
-Supongamos que compramos una malla de $n$ paltas donde todas se encuentran en el mismo estado inicial $d_i = 0$ para todo $i \in \{1, ..., n\}$.
+Francisca quiere comprar una malla de $n$ paltas.
+Enumeraremos cada una de las paltas en la malla con un entero entre $1$ a $n$.
+Además, modelaremos el \emph{estado de maduración} de una palta con un entero mayor o igual que cero,
+donde 0 representa el estado al momento de comprar la malla y cualquier entero mayor que 0
+indica un grado de madurez mayor.
+Es decir, en un inicio todas las paltas en la malla tienen un estado de maduración igual a 0 y
+el valor irá aumentando con el tiempo.
 
-Si denotamos $r_i$ como la tasa de descomposición de cada palta, podemos decir que en el tiempo $t$, la palta $i$-ésima presenta una descomposición de $t \cdot r_i$. Bajo este modelo, una palta se considera madura (se puede consumir) si su nivel de descomposición se encuentra dentro del rango $[k_{min}, k_{max}]$. Si es menor, la palta no se podrá consumir debido a que aún no madura y si es mayor, la palta se considerará podrida y por motivos sanitarios tampoco será posible consumirla.
+Cada palta madura a una velocidad distinta.
+Denotaremos con $r_i$ la \emph{tasa de maduración} de la palta $i$-ésima.
+Es decir, la palta $i$-ésima madura $r_i$ unidades por cada unidad de tiempo.
+En otras palabras, en el tiempo $t$, la palta $i$-ésima tiene un estado de maduración
+igual a $t \cdot r_i$.
 
-Dadas las tasas de descomposición de $n$ paltas, tu trabajo es responder a $q$ preguntas del siguiente tipo:
-¿Cuántas paltas se pueden consumir en el tiempo $x$?
+Una palta solo puede consumirse si su estado de maduración se encuentra en el rango adecuado.
+Específicamente, una palta puede consumirse si su estado de maduración es mayor o igual que
+$k_{min}$ y menor o igual que $k_{max}$.
+Si el estado de maduración es menor que $k_{min}$, la palta aún está muy verde.
+Si el estado es mayor que $k_{max}$, la palta ya está podrida.
+
+Dadas las tasas de descomposición de las $n$ paltas, tu trabajo es responder a $q$ consultas
+del siguiente tipo:
+¿Cuántas paltas pueden consumirse en el tiempo $x$?
 \end{problemDescription}
 
 \begin{inputDescription}
-La primera línea contiene 4 enteros $n$, $q$, $k_{min}$ y $k_{max}$ ($1 \leq n, q \leq 10^5$,  $0 \leq k_{min} \leq k_{max} \leq 10^9$,  $x \leq 10^9$) que indican la cantidad de paltas, el número de preguntas y los límites del rango de madurez aceptado.\\
 
+La primera línea contiene 4 enteros
+$n$, $q$, $k_{min}$ y $k_{max}$
+que indican la cantidad de paltas, el número de consultas y los límites del rango de madurez aceptado.
+Los valores satisfacen las siguientes restricciones:
 
-La segunda línea contiene $n$ enteros, las tasas de descomposición $r_i$. ($i \in \{1, \dots, n\}$)\\
+\begin{itemize}
+  \item $1 \leq n \leq 10^5$
+  \item $1 \leq q \leq 10^5$
+  \item $0 \leq k_{min} \leq k_{max} \leq 10^9$
+  \item $x \leq 10^9$
+\end{itemize}
 
-Luego vienen $q$ líneas, correspondientes a cada consulta $x_i$ ($i \in \{1, \dots, q\}$).
+La segunda línea contiene $n$ enteros.
+El entero $i$-ésimo corresponde a la tasa de descomposición $r_i$
+de la palta $i$-ésima.
+
+Luego vienen $q$ líneas describiendo la consultas.
+Cada línea contiene un entero $x$.
+La respuesta a la consulta debe ser cuántas paltas pueden consumirse
+en el tiempo $x$.
+
 \end{inputDescription}
 
 \begin{outputDescription}
-Imprimir $q$ líneas. La $i$-ésima de ellas, deberá contener el número de paltas dentro del rango $[k_{min}, k_{max}]$ en el tiempo $x_i$.
+La salida debe contener $q$ líneas con la respuesta a cada una de las consultas en el orden en que
+fueron entregadas.
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \subtask{20}
+  \subtask{35}
   Se probarán varios casos en donde $n, q \leq 10^3$.
-  \subtask{50}
+  \subtask{65}
   Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
 
 \begin{sampleDescription}
 \sampleIO{sample-1}
+\begin{center}
+\begin{minipage}{0.95\textwidth}
+\textbf{Explicación:} La primera consulta pregunta por cuantas paltas pueden consumirse en el tiempo 3.
+En este tiempo, las paltas tendrán estados de maduración 3, 6, 9 y 12.
+Como el rango de madurez aceptado es $[6, 10]$, solo dos paltas pueden consumirse (las paltas 2 y 3).
+La siguiente consulta pregunta por el tiempo 7.
+En este tiempo, las paltas tendrán estados de maduración 7, 14, 21 y 28.
+Por tanto, solo una palta puede consumirse (la palta 1).
+En la última consulta se pregunta por el tiempo 12.
+En este tiempo las paltas tendrán estados de maduración 12, 24, 36 y 48.
+Por tanto, ninguna palta puede consumirse.
+\end{minipage}
+\end{center}
+
 \sampleIO{sample-2}
+\begin{center}
+\begin{minipage}{0.95\textwidth}
+\textbf{Explicación:}
+La única consulta pregunta por el tiempo 5.
+En este tiempo los estados de maduración serán 5, 5, 5, 5 y 5.
+Como el rango permitido es $[5, 5]$ todas las paltas pueden consumirse.
+\end{minipage}
+\end{center}
 \end{sampleDescription}
 
 \end{document}

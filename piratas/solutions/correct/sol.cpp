@@ -11,7 +11,7 @@ struct Torrent {
     if(s == t.s)
     {
       if (p == t.p) // Cualquier indice debe ser valido
-        return random() % 2 == 0;
+        return rand() % 2 == 0;
       
       return p < t.p;
     }
@@ -22,6 +22,7 @@ struct Torrent {
 
 
 int main() {
+  srand((unsigned) time(NULL));
 
   int n;
   cin >> n;

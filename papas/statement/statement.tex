@@ -6,33 +6,61 @@
 
 \begin{document}
 \begin{problemDescription}
-	Julieta y sus $n$ amigos fueron a comer papas fritas a su local favorito, la Industria Chilena de Papas Caseras (ICPC), y se compran una porción de $p$ papas para compartir.
+	Julieta y sus amigos fueron a comer papas fritas a su local favorito,
+	la Industria Chilena de Papas Caseras (ICPC).
+	Al grupo le gusta hacer todo en conjunto, así que compraron una porción
+	de papas para compartir entre todos.
+	Los amigos de Julieta son personas muy civilizadas y toman turnos para
+	sacar papas.
+	Para mantener el orden, han diseñado un sistema donde cada
+	persona saca solo una papa a la vez.
 
+	En total son $n$ personas en el grupo (incluyendo a Julieta) y todos están
+	sentados al rededor de una mesa redonda.
+	Una de las personas es elegida para sacar la primera papa.
+	Luego saca una papa la persona de la derecha y así sucesivamente en una
+	ronda al rededor de la mesa.
+	Cuando ya todos sacaron una papa, el ciclo se vuelve a repetir hasta que ya no
+	queden más papas.
+	Dado el orden que eligieron, Julieta es la $k$-ésima persona en sacar una papa
+	por primera vez.
 
-	Como el grupo está compuesto por personas muy civilizadas (demasiado civilizadas, dirían algunos), se sientan en una mesa redonda y se turnan en sacar papas siguiendo siempre la misma dirección, repitiendo el ciclo cuando ya todos sacaron una papa. Dado el orden que eligieron, Julieta es la $k$-ésima persona en sacar papas por primera vez.
+	Como las papas fritas son caseras, cada papa puede tener un tamaño radicalmente
+	distinto.
+	Julieta es una persona muy observadora y ha determinado el tamaño $t_i$ de cada una
+	de ellas.
+	Dependiendo del tamaño de las papas que saca, su ración será más o menos grande.
+	El tamaño de su ración corresponde a la suma de los tamaños de todas
+	las papas de que saca.
 
-	Como las papas fritas son caseras, cada papa puede tener un tamaño radicalmente distinto a las otras, por lo que Julieta tomó nota del tamaño $t_i$ de cada una de ellas.
-
-	Como cualquier ser humano razonable, Julieta es una fanática total de las papas fritas, por lo que quiere saber cuál es la mayor cantidad que puede comer, independientemente de la elección de papas de sus amigos, y te pidió que crees un programa que encuentre la solución. ¿Podrás ayudarla?
+	De forma natural, Julieta quiere que su ración sea lo más grande posible.
+	Específicamente, si saca papas maximizando su ración, e independiente
+	de la elección de sus amigos, quiere saber el tamaño mínimo que tendrá su ración.
+	¿Podrías ayudarla?
 \end{problemDescription}
 
 \begin{inputDescription}
-	La primera línea de entrada contiene tres enteros $p$, $n$ y $k$ $(1 \leq n, p \leq 10^6$ y $1 \leq k \leq n+1)$ separados por espacios, los cuales indican la cantidad de papas, la cantidad de amigos, y la posición de Julieta en el orden respectivamente.
+	La primera línea de entrada contiene tres enteros $p$, $n$ y $k$
+	$(1 \leq n, p \leq 10^6$ y $1 \leq k \leq n)$, los cuales
+	indican respectivamente la cantidad de papas, la cantidad de personas en el grupo
+	y la posición de Julieta
 
-	La segunda línea contiene $p$ enteros separados por espacios, donde el entero $i$-ésimo corresponde al tamaño $t_i$ ($1 \leq t_i \leq 10^9$) de la papa número $i$.
+	La segunda línea contiene $p$ enteros, donde el entero $i$-ésimo
+	corresponde al tamaño $t_i$ ($1 \leq t_i \leq 10^9$) de la papa número $i$.
 \end{inputDescription}
 
 \begin{outputDescription}
-	La salida debe contener un único entero, la cantidad máxima que Julieta tiene garantizado que independientemente de sus amigos si ella decide de forma óptima qué papas sacar.
+	La salida debe contener un único entero, el tamaño de la ración que Julieta tiene
+	garantizado sacar si sacas las papas de forma óptima.
 \end{outputDescription}
 
 \begin{scoreDescription}
 	\subtask{??}
   	Se probarán varios casos en que $k = 1$, es decir, Julieta es la primera en sacar.
   	\subtask{??}
- 	Se probarán varios casos en que $n+1 = k = p$.
+ 	Se probarán varios casos en que $n = k = p$.
   	\subtask{??}
-  	Se probarán varios casos en que $n \leq 10$.
+  	Se probarán varios casos en que $n \leq 250$.
 	\subtask{??}
 	Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}

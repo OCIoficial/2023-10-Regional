@@ -13,15 +13,15 @@ A veces simplemente pela una palta y se las come a mascadas.
 Cada vez que va a la feria compra una malla entera para así tener suficientes paltas.
 
 Comprar paltas es un proceso complejo.
-Dependiendo de cuándo quieres comerlas, debes elegir entre comprar paltas lo suficientemente maduras
-que estén listas para consumir o paltas que aún no han madurado lo suficiente para poder consumirlas
+Dependiendo de cuándo quieres comerlas, debes elegir entre comprar paltas ya maduras
+listas para consumir o paltas que aún no han madurado para poder consumirlas
 en un par de días más.
 Más aún, como cualquier otra fruta, algunas paltas maduran más rápido que otras.
-Cada vez que va a la feria, Francisca tiene que pensar en todo esto y necesita un poco de ayuda
+Cada vez que va a la feria Francisca tiene que pensar en todo esto y necesita un poco de ayuda
 para poder comprar paltas de forma más eficiente.
 
 Francisca quiere comprar una malla de $n$ paltas.
-Enumeraremos cada una de las paltas en la malla con un entero entre $1$ a $n$.
+Enumeraremos cada una de las paltas en la malla con un entero entre $1$ y $n$.
 Además, modelaremos el \emph{estado de maduración} de una palta con un entero mayor o igual que cero,
 donde 0 representa el estado al momento de comprar la malla y cualquier entero mayor que 0
 indica un grado de madurez mayor.
@@ -65,7 +65,7 @@ de la palta $i$-ésima.
 
 Luego vienen $q$ líneas describiendo la consultas.
 Cada línea contiene un entero $x$.
-La respuesta a la consulta debe ser cuántas paltas pueden consumirse
+La respuesta a la consulta debe corresponder a cuántas paltas pueden consumirse
 en el tiempo $x$.
 
 \end{inputDescription}
@@ -86,7 +86,7 @@ fueron entregadas.
 \sampleIO{sample-1}
 \begin{center}
 \begin{minipage}{0.95\textwidth}
-\textbf{Explicación:} La primera consulta pregunta por cuantas paltas pueden consumirse en el tiempo 3.
+\textbf{Explicación caso de ejemplo 1:} La primera consulta pregunta por cuantas paltas pueden consumirse en el tiempo 3.
 En este tiempo, las paltas tendrán estados de maduración 3, 6, 9 y 12.
 Como el rango de madurez aceptado es $[6, 10]$, solo dos paltas pueden consumirse (las paltas 2 y 3).
 La siguiente consulta pregunta por el tiempo 7.
@@ -98,10 +98,11 @@ Por tanto, ninguna palta puede consumirse.
 \end{minipage}
 \end{center}
 
+\newpage
 \sampleIO{sample-2}
 \begin{center}
 \begin{minipage}{0.95\textwidth}
-\textbf{Explicación:}
+\textbf{Explicación caso de ejemplo 2:}
 La única consulta pregunta por el tiempo 5.
 En este tiempo los estados de maduración serán 5, 5, 5, 5 y 5.
 Como el rango permitido es $[5, 5]$ todas las paltas pueden consumirse.

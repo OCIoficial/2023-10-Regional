@@ -7,14 +7,14 @@
 \begin{document}
 \begin{problemDescription}
     Guffy es un joven que sueña con convertirse en el "Rey De Los Piratas", un título que ICPC (International
-    Contest of Piracy and Computing) otorga a quien gane su competencia anual de piratería. La competencia 
+    Contest of Piracy and Computing) otorga a quien gane su competencia anual de piratería. La competencia
     consiste en que la ICPC publica $N$ archivos online para que los participantes descarguen -- de
     manera legal -- la mayor cantidad posible. Quien descargue la mayor cantidad de archivos es coronado como
     el Rey De Los Piratas.
 
-    La ICPC publica sus archivos en forma de \cursive{torrent}. A diferencia de una descarga convencional desde
-    un servidor, en donde un servidor central controla el envío de datos a todos quienes descarguen el 
-    archivo, una descarga por \cursive{torrent} tiene $S$ "seeds" quienes toman el rol de proveer el archivo
+    La ICPC publica sus archivos en forma de \emph{torrent}. A diferencia de una descarga convencional desde
+    un servidor, en donde un servidor central controla el envío de datos a todos quienes descarguen el
+    archivo, una descarga por \emph{torrent} tiene $S$ "seeds" quienes toman el rol de proveer el archivo
     a quienes lo descargan, llamados "peers".
 
     Para ganar la competencia Guffy ha decidido priorizar los torrents con la mayor cantidad de seeds y la menor
@@ -25,18 +25,19 @@
 \begin{inputDescription}
 La primera linea de la entra consiste de un solo entero $N$, $0 < N \leq 10000$ representado el número de torrents
 entre los cuales Guffy debe elegir. Las siguientes $N$ lineas consisten de dos enteros separados por un espacio
-$S_i$, $P_i$ representado la cantidad de seeds y peers respectivamente del torrent $i$. Con $0 \leq S \leq 10000$ 
+$S_i$, $P_i$ representado la cantidad de seeds y peers respectivamente del torrent $i$. Con $0 \leq S \leq 10000$
 y $0 \leq P \leq 10000$.
 \end{inputDescription}
 
 \begin{outputDescription}
     La salida consiste de un solo entero $I$, representado el índice del torrent con mayor cantidad de seeds, en
-    caso de empate se debe elegir el torrent con la menor cantidad de peers. 
+    caso de empate se debe elegir el torrent con la menor cantidad de peers.
     En caso de un segundo empate cualquiera de los índices ganadores sirve.
 \end{outputDescription}
 
 \begin{scoreDescription}
-    Se dará puntaje en base a la cantidad de casos de prueba correctos.
+Este problema no contiene subtareas. Se dará puntaje proporcional de a cuerdo a la cantidad de
+casos de prueba correctos siendo 100 el puntaje máximo.
 \end{scoreDescription}
 
 \begin{sampleDescription}

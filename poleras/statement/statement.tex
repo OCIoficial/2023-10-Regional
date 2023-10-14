@@ -6,48 +6,61 @@
 
 \begin{document}
 \begin{problemDescription}
-Javier va a viajar a la Olimpiada Internacional de Informática (IOI) acompañando al equipo Chileno de este año. En su emoción, junto a Cathy y Manuel
-decidieron mandar a hacer poleras oficiales de equipo.
+Javier va a viajar a la Olimpiada Internacional de Informática (IOI)
+acompañando al equipo Chileno.
+En su emoción, decidió mandar a hacer poleras oficiales del equipo.
 
-Como todos sabemos, hay $n$ tallas de poleras desde la más pequeña (talla $1$) a la más grande (talla $n$). Para cada talla $i$, Javier mandó
-a hacer $a_i$ poleras.
+Como todos sabemos, las poleras vienen en $n$ tallas, con la talla 1 siendo la más pequeña
+y la talla $n$ la más grande.
+Para cada talla $i$, Javier mandó a hacer $a_i$ poleras de esa talla.
 
-Un par de días antes de iniciar el viaje a Hungría para la IOI, Javier se dio cuenta de que había cometido un gran error: ¡Había registrado
-mal las tallas de poleras de cada miembro de la delegación, y en verdad necesitaba $b_i$ poleras de talla $i$ en vez de $a_i$!
+Un par de días antes de iniciar el viaje, Javier se dio
+cuenta de un gran error que había cometido.
+¡Había registrado mal las tallas de poleras de los miembros de la delegación!
+En vez de $a_i$ poleras de talla $i$ necesitaba $b_i$ poleras de esa talla.
 
-Ya era muy tarde para mandar a hacer las poleras de nuevo, y Javier desesperadamente buscó una solución para este problema. En un momento de
-inspiración, recordó que la secadora de ropa podía achicar una polera cuando se usaba a mucha potencia.
+Como ya era muy tarde para mandar a hacer las poleras de nuevo, Javier
+empezó desesperadamente a buscar una solución alternativa.
+En un momento de inspiración, recordó que se puede achicar una polera metiéndola a
+la secadora a alta potencia.
 
-Javier investigó en internet y descubrió que su modelo de secadora podía achicar una polera a lo más $k$ tallas. Es decir, podía achicar una
-polera de talla $s$ a una de talla $s-1, s-2, \dots$, hasta $s-k$.
+Después de investigar en internet, Javier descubrió que controlando el tiempo de secado su
+modelo de secadora puede achicar una polera hasta $k$ tallas.
+Es decir, una polera de talla $s$ puede achicarse a las tallas $s-1, s-2, \dots$, $s-k$.
+Naturalmente, una polera de talla menor o igual que $k$ solo puede achicarse hasta la talla 1.
 
-Pero antes de achicar las poleras, Javier quiere asegurarse de que es posible convertir las poleras que ya compró (de talla $a_i$) en poleras de
-tallas de las que necesita $b_i$. Como Javier está muy apurado con los temas del viaje, no tiene el tiempo para determinar esto con certeza.
-
-Javier sabe que los competidores de la OCI son los mejores programadores de Chile a nivel escolar, y por eso decidió pedirte tu ayuda. ¿Puedes
-ayudar a Javier con su problema?
+Antes de ponerse a achicar poleras, Javier quiere asegurarse de que es
+posible convertir las poleras que ya compró en poleras de
+las tallas que necesita.
+Específicamente, quiere saber si para cada talla $i$ es posible obtener
+al menos $b_i$ poleras de esa talla si achica algunas de las poleras que ya compró.
+Como Javier está muy apurado con los temas del viaje, no tiene el tiempo para determinar
+esto con certeza.
+?`Podrías ayudarlo?
 \end{problemDescription}
 
 \begin{inputDescription}
-La primera línea de la entrada contiene los números enteros $n$ y $k$ $(1 \leq n \leq 10^6, 0 \leq k \leq 10^6)$ separados por espacios, indicando la
-cantidad de tallas de poleras y la cantidad máxima de tallas que la secadora puede achicar.
+La primera línea de la entrada contiene los enteros $n$ y $k$ $(1 \leq n \leq 10^6, 0 \leq k \leq 10^6)$,
+indicando respectivamente la cantidad de tallas y la cantidad máxima de tallas que la secadora puede achicar.
 
-La segunda línea contiene los números enteros $a_1, a_2, \dots, a_n$ $(0 \leq a_i \leq 10^9$) separados por espacios, indicando la cantidad de
-poleras de cada talla que tiene Javier.
+La segunda línea contiene los números enteros $a_1, a_2, \dots, a_n$ $(0 \leq a_i \leq 10^9$),
+indicando la cantidad de poleras de cada talla que Javier compró.
 
-La tercera línea contiene los números enteros $b_1, b_2, \dots, b_n$ $(0 \leq b_i \leq 10^9)$ separados por espacios, indicando la cantidad de
-poleras de cada talla que necesita Javier.
+La tercera línea contiene los números enteros $b_1, b_2, \dots, b_n$ $(0 \leq b_i \leq 10^9)$, indicando
+la cantidad de poleras de cada talla que necesita Javier.
 \end{inputDescription}
 
 \begin{outputDescription}
-Si es posible que Javier obtenga las tallas que necesita, tu programa debe imprimir \texttt{SI}. En el caso contrario, debe imprimir \texttt{NO}.
+Si para cada $i$ es posible obtener al menos $b_i$ poleras de esa talla, tu programa debe imprimir
+\texttt{SI}.
+En el caso contrario, debe imprimir \texttt{NO}.
 \end{outputDescription}
 
 \begin{scoreDescription}
   \subtask{10}
   Se probarán varios casos con $k=0$, es decir, la secadora no puede achicar poleras.
   \subtask{20}
-  Se probarán varios casos con $k=1$, es decir, la secadora puede achicar a lo más una talla.
+  Se probarán varios casos con $k=1$, es decir, la secadora puede achicar poleras a lo más una talla.
   \subtask{30}
   Se probarán varios casos con $k \leq 100$.
   \subtask{40}
@@ -57,7 +70,27 @@ Si es posible que Javier obtenga las tallas que necesita, tu programa debe impri
 \begin{sampleDescription}
 % TODO: Add samples
 \sampleIO{sample-1}
+\begin{center}
+    \begin{minipage}{0.94\textwidth}
+    \textbf{Explicación caso de ejemplo 1:} Javier compró 10 poleras de talla 1, 21 de talla 2 y 32 de talla 3,
+    pero necesita 12 de talla 1, 20 de talla 2 y 30 de talla 3.
+    Javier tiene suficientes poleras de talla 2 y 3, pero le faltan dos de talla 1.
+    Como no es posible achicar poleras ($k=0$), es imposible obtener las poleras que le falta y por
+    lo tanto la respuesta es \texttt{NO}.
+    \end{minipage}
+\end{center}
+
 \sampleIO{sample-2}
+\begin{center}
+    \begin{minipage}{0.94\textwidth}
+    \textbf{Explicación caso de ejemplo 2:} Como $k=2$, Javier tiene un par de alternativas para obtener
+    las poleras de talla 1 que le faltan.
+    Una opción es achicar la polera extra de talla 2 en una talla y una de las poleras extra de
+    talla 3 en dos tallas.
+    También podría achicar las dos poleras extras de talla 3 en dos tallas.
+    Por lo tanto, en este caso la respuesta es \texttt{SI}.
+    \end{minipage}
+\end{center}
 \end{sampleDescription}
 
 \end{document}

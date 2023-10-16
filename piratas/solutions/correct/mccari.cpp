@@ -34,7 +34,7 @@ int main() {
     int s, p;
     cin >> s >> p;
 
-    Torrent t(s, p, i);
+    Torrent t(s, p, i+1);
 
     if(t < torrent)
       torrent = t;

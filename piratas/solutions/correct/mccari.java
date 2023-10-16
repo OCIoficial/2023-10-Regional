@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-public class Main {
+public class piratas {
     static class Torrent implements Comparable<Torrent> {
         int s, p, index;
 

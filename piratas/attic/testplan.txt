@@ -31,11 +31,23 @@
   # Use sample data as test
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
+  sample ; copy statement/sample-3.in
 
   # Manual test case
   manual ; copy attic/manual-1.in
 
   # Random tests
-  rand ; random.cpp 10 100
-  rand ; random.cpp 100 1000
+  rand ; random_generator.py 2 15 30
+  rand ; random_generator.py 3 10 25
+  rand ; random_generator.py 4 20 105
+  rand ; random_generator.py 5 100 49
+  rand ; random_generator.py 6 1000 1999
+  rand ; random_generator.py 7 5432 2424
+  rand ; random_generator.py 8 6425 7968
+  rand ; random_generator.py 9 437 927
+  rand ; random_generator.py 10 274 60
+  rand ; random_generator.py 11 1111 1111
+  rand ; random_generator.py 12 1211 1211
+  rand ; random_generator.py 13 3333 3333
+  rand ; random_generator.py 14 5555 555
 

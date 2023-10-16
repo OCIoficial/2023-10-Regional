@@ -31,11 +31,36 @@
   # Use sample data as test
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
+  sample ; copy statement/sample-3.in
 
   # Manual test case
   manual ; copy attic/manual-1.in
+  manual ; copy attic/manual-2.in
 
-  # Random tests
-  rand ; random.cpp 10 100
-  rand ; random.cpp 100 1000
+  # Random tests using first generator
+  # args: [random gen seed] [n] [min val] [max val]
+  rand1 ; random_generator.py 2 15 30
+  rand1 ; random_generator.py 3 10 25
+  rand1 ; random_generator.py 4 20 105
+  rand1 ; random_generator.py 5 100 49
+  rand1 ; random_generator.py 6 1000 1999
+  rand1 ; random_generator.py 7 5432 2424
+  rand1 ; random_generator.py 8 6425 7968
+  rand1 ; random_generator.py 9 437 927
+  rand1 ; random_generator.py 10 274 60
+  rand1 ; random_generator.py 11 1111 1111
+  rand1 ; random_generator.py 12 1211 1211
+  rand1 ; random_generator.py 13 3333 3333
+  rand1 ; random_generator.py 14 5555 555
 
+  # Random tests using second generator
+  # args: [random gen seed] [n] [min seeds] [max seeds] [min peers] [max peers]
+  rand2 ; random_generator2.py 15 10000 0 10000 0 10000 # unrestricted
+  rand2 ; random_generator2.py 16 10000 0 10000 0 10000 # unrestricted
+  rand2 ; random_generator2.py 17 1000 1337 1337 0 10000 # same seeds
+  rand2 ; random_generator2.py 18 1000 1337 1337 0 10000 # same seeds
+  rand2 ; random_generator2.py 19 10000 9900 10000 9900 10000 # big numbers
+  rand2 ; random_generator2.py 20 101 0 101 0 101 # at least 1 repeated seeds
+  rand2 ; random_generator2.py 21 10000 0 98 0 98 # at least 1 repeated pair (seeds, peers)
+  rand2 ; random_generator2.py 22 100 0 1 0 1 # many repetitions
+  rand2 ; random_generator2.py 23 100 0 1 0 1 # many repetitions

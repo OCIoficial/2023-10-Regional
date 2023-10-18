@@ -29,29 +29,29 @@
 
 [Subtask 1 - validators/st1.cpp]
   # st1: k=1
-  rand-st1 ; random_gen.py 10 1 1 1 1 1000
-  rand-st1 ; random_gen.py 11 100 100 1 1 1000
-  rand-st1 ; random_gen.py 12 2 100 1 1 1000
-  rand-st1 ; random_gen.py 13 1 100 1 1 1000
-  rand-st1 ; random_gen.py 14 1000000 1000000 1 1 1000
+  rand-st1 ; random_gen.py 1 1 1 1 1000
+  rand-st1 ; random_gen.py 100 100 1 1 1000
+  rand-st1 ; random_gen.py 2 100 1 1 1000
+  rand-st1 ; random_gen.py 1 100 1 1 1000
+  rand-st1 ; random_gen.py 1000000 1000000 1 1 1000
 
 [Subtask 2 - validators/st2.cpp]
   # st2: n=k=p
-  rand-st2 ; random_gen.py 20 5 5 5 1 1000
-  rand-st2 ; random_gen.py 21 250 250 250 1 1000
-  rand-st2 ; random_gen.py 22 1000 1000 1000 1 2
-  rand-st2 ; random_gen.py 23 1000000 1000000 1000000 1 1000
+  rand-st2 ; random_gen.py 5 5 5 1 1000
+  rand-st2 ; random_gen.py 250 250 250 1 1000
+  rand-st2 ; random_gen.py 1000 1000 1000 1 2
+  rand-st2 ; random_gen.py 1000000 1000000 1000000 1 1000
 
 [Subtask 3 - validators/st3.cpp]
   # st3: n <= 250
-  rand-st3 ; random_gen.py 30 250 250 250 1 1000
-  rand-st3 ; random_gen.py 31 250 250 250 1 1000
-  rand-st3 ; random_gen.py 32 250 250 250 1 1000
+  rand-st3 ; random_gen.py 250 250 250 1 1000
+  rand-st3 ; random_gen.py 250 250 250 1 1000
+  rand-st3 ; random_gen.py 250 250 250 1 1000
 
   # Use sample data as test
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
 
 [Subtask 4 - validators/st4.cpp]
-  rand-st4 ; random_gen.py 40 1000000 1000000 1000000 1 1000
-  rand-st4 ; random_gen.py 41 1000000 1000000 1000000 1 1000
+  rand-st4 ; random_gen.py 1000000 1000000 1000000 1 1000
+  rand-st4 ; random_gen.py 1000000 1000000 1000000 1 1000

@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Jpaulsen {
+class paltas {
     static int[] count;
     static ArrayList<Pair> good = new ArrayList<>();
     static ArrayList<Pair> bad = new ArrayList<>();

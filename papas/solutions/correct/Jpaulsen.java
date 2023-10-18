@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Jpaulsen {
+class papas {
     static int p, n, k;
     static int[] t;
 

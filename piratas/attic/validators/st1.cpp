@@ -13,7 +13,7 @@ int main() {
   for (int i = 1; i <= n; i++) {
     int s = inf.readInt(0, 10000, "s_{" + to_string(i) + "}");
     inf.readSpace();
-    int p = inf.readInt(1, 10000, "p_{" + to_string(i) + "}");
+    int p = inf.readInt(0, 10000, "p_{" + to_string(i) + "}");
     inf.readEoln();
     if (torrents.count(s) == 0) {
       torrents[s] = {};

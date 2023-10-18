@@ -35,6 +35,7 @@
   # Manual test case
   manual ; copy attic/manual-1.in
   manual ; copy attic/manual-2.in
+  manual ; copy attic/manual-3.in
 
   # Random tests using first generator
   # args: [random gen seed] [n] [min val] [max val]

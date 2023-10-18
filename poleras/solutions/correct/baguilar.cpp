@@ -32,6 +32,6 @@ int main() {
             return 0;
         }
     }
-    cout << "YES" << endl;
+    cout << "SI" << endl;
     return 0;
 }

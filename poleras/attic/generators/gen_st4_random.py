@@ -11,5 +11,6 @@ LIM = 10**6
 B = [random.randint(0, LIM) for _ in range(n)]
 A = [random.randint(0, LIM) for _ in range(n)]
 
+print(n, k)
 print(' '.join(str(x) for x in A))
 print(' '.join(str(x) for x in B))

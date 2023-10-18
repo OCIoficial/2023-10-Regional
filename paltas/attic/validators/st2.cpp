@@ -14,7 +14,7 @@ int main() {
   inf.readEoln();
 
   for (int i = 1; i <= n; i++) {
-    int r = inf.readInt(2, 10000, "r_{" + to_string(i) + "}");
+    int r = inf.readInt(1, 10000, "r_{" + to_string(i) + "}");
     if (i != n) {
       inf.readSpace();
     }

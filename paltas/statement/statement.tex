@@ -16,7 +16,8 @@ Comprar paltas es un proceso complejo.
 Dependiendo de cuándo quieres comerlas, debes elegir entre comprar paltas ya maduras
 listas para consumir o paltas que aún no han madurado para poder consumirlas
 en un par de días más.
-Más aún, como cualquier otra fruta, algunas paltas maduran más rápido que otras.
+Más aún, como cualquier otra fruta, algunas paltas maduran más rápido que otras haciendo
+todo más difícil.
 Cada vez que va a la feria Francisca tiene que pensar en todo esto y necesita un poco de ayuda
 para poder comprar paltas de forma más eficiente.
 
@@ -42,7 +43,7 @@ Si el estado es mayor que $k_{max}$, la palta ya está podrida.
 
 Dadas las tasas de descomposición de las $n$ paltas, tu trabajo es responder a $q$ consultas
 del siguiente tipo:
-¿Cuántas paltas pueden consumirse en el tiempo $x$?
+¿Cuántas paltas pueden consumirse en el tiempo $t$?
 \end{problemDescription}
 
 \begin{inputDescription}
@@ -59,13 +60,13 @@ Los valores satisfacen las siguientes restricciones:
 \end{itemize}
 
 La segunda línea contiene $n$ enteros.
-El entero $i$-ésimo corresponde a la tasa de descomposición $r_i$ ($1 < r_i \leq 10^4$)
+El entero $i$-ésimo corresponde a la tasa de descomposición $r_i$ ($1 \leq r_i \leq 10^4$)
 de la palta $i$-ésima.
 
 Luego vienen $q$ líneas describiendo la consultas.
-Cada línea contiene un entero $x$ ($0 \leq x \leq 10^5$)
+Cada línea contiene un entero $t$ ($0 \leq t \leq 10^5$).
 La respuesta a la consulta debe corresponder a cuántas paltas pueden consumirse
-en el tiempo $x$.
+en el tiempo $t$.
 
 \end{inputDescription}
 

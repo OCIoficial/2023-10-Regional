@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
   registerValidation();
-  int p = inf.readInt(2, 1000000, "p");
+  int p = inf.readInt(2, 100000, "p");
   inf.readSpace();
   int n = inf.readInt(p, p, "n");
   inf.readSpace();

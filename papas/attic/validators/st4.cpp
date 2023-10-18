@@ -4,11 +4,11 @@ using namespace std;
 
 int main() {
   registerValidation();
-  int p = inf.readInt(1, 1000000, "p");
+  int p = inf.readInt(2, 100000, "p");
   inf.readSpace();
-  int n = inf.readInt(max(p, 2), 1000000, "n");
+  int n = inf.readInt(2, p, "n");
   inf.readSpace();
-  int k = inf.readInt(1, p, "k");
+  int k = inf.readInt(1, n, "k");
   inf.readEoln();
 
   for (int i = 1; i <= p; i++) {

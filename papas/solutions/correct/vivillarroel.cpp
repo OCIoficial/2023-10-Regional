@@ -14,7 +14,7 @@ int main() {
 	long long ans = 0;
 	int i = 1;
 	for (auto it = papas.rbegin(); it != papas.rend(); ++it, ++i) {
-		if (i % (n+1) == k % (n+1)) ans += *it;
+		if (i % n == k % n) ans += *it;
 	}
 	cout << ans << endl;
 }

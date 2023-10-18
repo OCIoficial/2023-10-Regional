@@ -30,18 +30,83 @@
 [Subtask 1 - validators/st1.cpp]
   # Use sample data as test
   sample ; copy statement/sample-1.in
-  sample ; copy statement/sample-2.in
 
-  # Manual test case
-  manual ; copy attic/manual-1.in
+  # Manual test cases
+  manual ; copy attic/manual_cases/st1-1.in
+  manual ; copy attic/manual_cases/st1-2.in
+  manual ; copy attic/manual_cases/st1-3.in
 
   # Random tests
-  rand ; random.cpp 10 100
-  rand ; random.cpp 100 1000
+  rand-no ; generators/gen_st1_no.py 100000
+  rand-no ; generators/gen_st1_no.py 100000
+  rand-no ; generators/gen_st1_no.py 1000000
+  rand-yes ; generators/gen_st1_si.py 100000
+  rand-yes ; generators/gen_st1_si.py 100000
+  rand-yes ; generators/gen_st1_si.py 1000000
 
 
 [Subtask 2 - validators/st2.cpp]
-  # Random tests
-  rand ; random.py 10 20 30
-  rand ; random.py 20 30 40
+  # Manual test cases
+  manual ; copy attic/manual_cases/st2-1.in
+  manual ; copy attic/manual_cases/st2-2.in
 
+  # Random tests
+  rand-no ; generators/gen_st2_no.py 100000
+  rand-no ; generators/gen_st2_no.py 100000
+  rand-no ; generators/gen_st2_no.py 1000000
+  rand-yes ; generators/gen_st2_si.py 100000
+  rand-yes ; generators/gen_st2_si.py 1000000
+  rand-yes ; generators/gen_st2_si_strict.py 100000
+  rand-yes ; generators/gen_st2_si_strict.py 1000000
+
+[Subtask 3 - validators/st3.cpp]
+  # Use sample data as test
+  sample ; copy statement/sample-1.in
+  sample ; copy statement/sample-2.in
+
+  # Manual test cases
+  manual ; copy attic/manual_cases/st1-1.in
+  manual ; copy attic/manual_cases/st1-2.in
+  manual ; copy attic/manual_cases/st2-1.in
+  manual ; copy attic/manual_cases/st2-2.in
+  manual ; copy attic/manual_cases/st3-1.in
+
+  # Random tests
+  rand-yes ; generators/gen_si.py 10000 100
+  rand-yes ; generators/gen_si.py 99285 87
+  rand-yes ; generators/gen_si_strict.py 1000000 100
+  rand-no ; generators/gen_no.py 1051 10
+  rand-no ; generators/gen_no.py 1000000 10
+
+
+[Subtask 4 - validators/st4.cpp]
+  # Use sample data as test
+  sample ; copy statement/sample-1.in
+  sample ; copy statement/sample-2.in
+
+  # Manual test cases
+  manual ; copy attic/manual_cases/st1-1.in
+  manual ; copy attic/manual_cases/st1-2.in
+  manual ; copy attic/manual_cases/st2-1.in
+  manual ; copy attic/manual_cases/st2-2.in
+  manual ; copy attic/manual_cases/st3-1.in
+
+  # Random tests
+  rand ; generators/gen_st4_random.py
+  rand ; generators/gen_st4_random.py
+  rand ; generators/gen_st4_random.py
+  rand-no ; generators/gen_st4_no_tricky.py 100000
+  rand-no ; generators/gen_st4_no_tricky.py 1000000
+  rand-yes ; generators/gen_st4_si_tricky.py 100000
+  rand-yes ; generators/gen_st4_si_tricky.py 1000000
+  rand-yes ; generators/gen_si.py 952 2
+  rand-yes ; generators/gen_si.py 636 5
+  rand-yes ; generators/gen_si_strict.py 511 6
+  rand-no ; generators/gen_no.py 1051 10
+
+  # st3 random tests
+  rand-yes ; generators/gen_si.py 10000 100
+  rand-yes ; generators/gen_si.py 99285 87
+  rand-yes ; generators/gen_si_strict.py 1000000 100
+  rand-no ; generators/gen_no.py 1051 10
+  rand-no ; generators/gen_no.py 1000000 10

@@ -6,7 +6,7 @@ int main() {
   registerValidation();
   int n = inf.readInt(1, 1000000, "n");
   inf.readSpace();
-  int k = inf.readInt(0, 1000, "k");
+  int k = inf.readInt(0, 100, "k");
   inf.readEoln();
 
   for (int i = 1; i <= n; i++) {

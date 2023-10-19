@@ -28,20 +28,54 @@
 # passed as the first argument meaning that the rest of the arguments are "shifted" in one position.
 
 [Subtask 1 - validators/st1.cpp]
+  
   # Use sample data as test
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
 
-  # Manual test case
-  manual ; copy attic/manual-1.in
+  # Manual cases
+  manual ; copy attic/manual_cases/st1-1.in
+  manual ; copy attic/manual_cases/st1-2.in
+  manual ; copy attic/manual_cases/st1-3.in
+  manual ; copy attic/manual_cases/st1-4.in
 
   # Random tests
-  rand ; random.cpp 10 100
-  rand ; random.cpp 100 1000
+  # args: [n] [q] [kmin] [kmax] [r_i max] [t max]
+  rand ; random_gen.py 1000 1000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000 1000 0 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 500000 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 1000 1500 2 1000
+  rand ; random_gen.py 1000 1000 2000 3000 10 1000
+  rand ; random_gen.py 1 1000 0 1000000000 1 100000
 
 
 [Subtask 2 - validators/st2.cpp]
+# Use sample data as test
+  sample ; copy statement/sample-1.in
+  sample ; copy statement/sample-2.in
+
+  # Manual cases
+  manual ; copy attic/manual_cases/st1-1.in
+  manual ; copy attic/manual_cases/st1-2.in
+  manual ; copy attic/manual_cases/st1-3.in
+  manual ; copy attic/manual_cases/st1-4.in
+
   # Random tests
-  rand ; random.py 10 20 30
-  rand ; random.py 20 30 40
+  # args: [n] [q] [kmin] [kmax] [r_i max] [t max]
+  rand ; random_gen.py 1000 1000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000 1000 0 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 500000 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 1000 1500 2 1000
+  rand ; random_gen.py 1000 1000 2000 3000 10 1000
+  rand ; random_gen.py 1 1000 0 1000000000 1 100000
+  # Subtask-specific
+  rand ; random_gen.py 1000000 100000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000000 100000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000000 100000 0 1000000 10000 10000
+  rand ; random_gen.py 1000000 100000 500000 1000000 10000 10000
+  rand ; random_gen.py 1000000 100000 1000 1500 2 1000
+  rand ; random_gen.py 1000000 100000 1000 1500 2 1000
+  rand ; random_gen.py 1000000 100000 2000 3000 10 1000
+  rand ; random_gen.py 1000000 100000 2000 3000 10 1000
+  
 

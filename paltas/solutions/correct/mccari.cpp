@@ -9,10 +9,11 @@ int main() {
   cin >> n >> q >> k_min >> k_max;
 
   vector<long long> R(n);
-  sort(R.begin(), R.end());
 
   for(int i = 0; i < n; i++)
     cin >> R[i];
+
+  sort(R.begin(), R.end());
 
   while(q--)
   {

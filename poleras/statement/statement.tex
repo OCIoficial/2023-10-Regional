@@ -33,20 +33,20 @@ Una polera puede meterse solamente una vez a la secadora para achicarla.
 Antes de ponerse a achicar poleras, Javier quiere asegurarse de que es
 posible convertir las poleras que ya compró en poleras de
 las tallas que necesita.
-Específicamente, quiere saber si para cada talla $i$ es posible obtener
-al menos $b_i$ poleras de esa talla si achica algunas de las poleras que ya compró.
+Específicamente, quiere saber si para cada talla $i$ es posible terminar
+con al menos $b_i$ poleras de esa talla si achica algunas de las poleras que ya compró.
 Por ejemplo, considera el siguiente escenario representado por la siguiente tabla donde la cantidad
 de tallas es tres ($n=3$):
 \begin{center}
 \begin{tabular}{cccc}
    & \footnotesize 1 & \footnotesize2  &  \footnotesize 3 \\
 \hline
- a & 10 & 21 & 32 \\
- b & 12 & 20 & 30 \\
+ $a$ & 10 & 21 & 32 \\
+ $b$ & 12 & 20 & 30 \\
 \hline
 \end{tabular}
 \end{center}
-La fila \texttt{a} representa las poleras que compró de cada talla y la fila \texttt{b}
+La fila $a$ representa las poleras que compró de cada talla y la fila $b$
 la cantidad de poleras que necesita. Si la secadora puede achicar poleras
 hasta dos tallas ($k=2$) entonces Javier tiene varias opciones para obtener las poleras
 que necesita. Algunas de las opciones son:
@@ -74,8 +74,8 @@ la cantidad de poleras de cada talla que necesita Javier.
 \end{inputDescription}
 
 \begin{outputDescription}
-Si para cada $i$ es posible obtener al menos $b_i$ poleras de esa talla, tu programa debe imprimir
-\texttt{SI}.
+Si achicando poleras es posible terminar con al menos $b_i$
+poleras de talla $i$ para cada $i$, tu programa debe imprimir \texttt{SI}.
 En el caso contrario, debe imprimir \texttt{NO}.
 \end{outputDescription}
 

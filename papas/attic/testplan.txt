@@ -51,6 +51,11 @@
 
 [Subtask 3 - validators/st3.cpp]
   # st3: n <= 250
+  # Use st1, st2 and st3 manual cases
+  manual   ; copy attic/manual/manual-st1-1.in
+  manual   ; copy attic/manual/manual-st1-2.in
+  manual   ; copy attic/manual/manual-st1-3.in
+  manual   ; copy attic/manual/manual-st1-4.in
   manual   ; copy attic/manual/manual-st3-1.in
   rand-st3 ; random_gen.py 250 250 250 1 1000
   rand-st3 ; random_gen.py 250 250 250 1 1000
@@ -62,7 +67,23 @@
   sample ; copy statement/sample-2.in
 
 [Subtask 4 - validators/st4.cpp]
+  # Use all manual cases
+  manual   ; copy attic/manual/manual-st1-1.in
+  manual   ; copy attic/manual/manual-st1-2.in
+  manual   ; copy attic/manual/manual-st1-3.in
+  manual   ; copy attic/manual/manual-st1-4.in
+  manual   ; copy attic/manual/manual-st2-1.in
+  manual   ; copy attic/manual/manual-st2-2.in
+  manual   ; copy attic/manual/manual-st3-1.in
   manual   ; copy attic/manual/manual-st4-1.in
+
+  # Use sample data as test
+  sample ; copy statement/sample-1.in
+  sample ; copy statement/sample-2.in
+
   rand-st4 ; random_gen.py 100000 100000 100000 1 1000
   rand-st4 ; random_gen.py 100000 100000 100000 1 1000
   rand-st4 ; random_gen.py 100000 100000 100000 1 1000
+  rand-st4 ; random_gen.py 1000 1000 1000 1 1000
+  rand-st4 ; random_gen.py 1000 1000 1000 1 1000
+  rand-st4 ; random_gen.py 1000 1000 1000 1 1000

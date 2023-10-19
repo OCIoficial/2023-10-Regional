@@ -28,7 +28,7 @@ Después de investigar en internet, Javier descubrió que, controlando el tiempo
 secadora puede encoger una polera hasta $k$ tallas.
 Es decir, una polera de talla $s$ puede encogerse a las tallas $s-1, s-2, \dots$, $s-k$.
 Naturalmente, una polera de talla menor o igual que $k$ solo puede encogerse hasta la talla 1.
-Cada polera puede meterse solamente una vez a la secadora para achicarla.
+Cada polera puede meterse solamente una vez a la secadora para encogerla.
 
 Antes de iniciar el proceso, Javier quiere asegurarse de que es
 posible convertir las poleras que ya compró en poleras de
@@ -64,7 +64,8 @@ con certeza si puede encoger las poleras adecuadamente.
 
 \begin{inputDescription}
 La primera línea de la entrada contiene los enteros $n$ y $k$ $(1 \leq n \leq 10^6, 0 \leq k \leq 10^6)$,
-que indican la cantidad total de tallas y la cantidad máxima de tallas que la secadora puede achicar, respectivamente.
+que indican la cantidad total de tallas y la cantidad máxima de tallas que la secadora puede encoger,
+respectivamente.
 
 La segunda línea contiene los números enteros $a_1, a_2, \dots, a_n$ $(0 \leq a_i \leq 10^9$),
 que corresponden a la cantidad de poleras de cada talla que compró Javier.
@@ -98,7 +99,7 @@ En caso contrario, debe imprimir \texttt{NO}.
     \textbf{Explicación caso de ejemplo 1:} Javier compró 10 poleras de talla 1, 21 de talla 2 y 32 de talla 3,
     pero necesita 12 de talla 1, 20 de talla 2 y 30 de talla 3.
     Javier tiene suficientes poleras de talla 2 y 3, pero le faltan dos de talla 1.
-    Como no es posible achicar poleras ($k=0$), es imposible obtener las poleras que le falta y por
+    Como no es posible encoger poleras ($k=0$), es imposible obtener las poleras que le falta y por
     lo tanto la respuesta es \texttt{NO}.
     \end{minipage}
 \end{center}
@@ -114,7 +115,7 @@ En caso contrario, debe imprimir \texttt{NO}.
 \begin{center}
     \begin{minipage}{0.94\textwidth}
     \textbf{Explicación caso de ejemplo 3:} En este caso la respuesta es \texttt{NO}, porque si Javier
-    achica algunas poleras para obtener las poleras de talla 1 que le faltan, se quedará sin poleras
+    encoge algunas poleras para obtener las poleras de talla 1 que le faltan, se quedará sin poleras
     suficientes de talla 2 o 3.
     \end{minipage}
 \end{center}

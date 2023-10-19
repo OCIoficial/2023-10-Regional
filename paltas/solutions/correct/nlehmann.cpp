@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <vector>
+#include <algorithm>
 
 int binsearch(const std::vector<int> &arr, int x, int k) {
   int l = 0;
@@ -24,6 +25,8 @@ int main() {
   for (int i = 0; i < n; ++i) {
     scanf("%d", &rates[i]);
   }
+
+  std::sort(rates.begin(), rates.end());
 
   for (int i = 0; i < q; ++i) {
     int x;

@@ -27,7 +27,7 @@ int binary_search(const std::vector<int> &rates, int time, int target) {
 int main() {
     int n, q, k_min, k_max;
     cin >> n >> q >> k_min >> k_max;
-    vector<int> rate(n );
+    vector<int> rate(n);
     for (size_t i = 0; i < n; i++) {
         cin >> rate[i];
     }
@@ -35,6 +35,11 @@ int main() {
     for (size_t i = 0; i < q; i++) {
         int time;
         cin >> time;
+        if (rate.size() == 1) {
+            // no shame
+            cout << ((k_min <= rate.front() * time) && (rate.front() * time <= k_max)) << endl;
+            continue;
+        }
         int min_idx = binary_search(rate, time, k_min);
         int max_idx = binary_search(rate, time, k_max + 1);
         cout << max_idx - min_idx << endl;

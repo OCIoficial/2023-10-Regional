@@ -16,36 +16,37 @@
     La ICPC publica sus archivos en forma de \emph{torrent}.
     % A diferencia de una descarga convencional, en donde un servidor central
     % controla el envío de datos a todos quienes descarguen el archivo,
-    En una descarga por torrent cada archivo tiene asociado un número de \emph{seeds} quienes
+    En una descarga por torrent, cada archivo tiene asociado un número de \emph{seeds}, quienes
     son los que toman el rol de proveer el archivo a quienes lo descargan.
     Quienes descargan el archivo son llamados \emph{peers}.
 
-    Para ganar la competencia Guffy ha decidido priorizar los torrents con la mayor cantidad
-    de seeds y la menor cantidad de peers.
-    De esta forma puede maximizar la velocidad de descarga al tener más proveedores y menos
-    competencia tratando de descargar el mismo archivo.
-    ?`Podrías ayudar a Guffy a elegir qué torrents descargar?
+    Para ganar la competencia, Guffy ha decidido priorizar los torrents con la mayor cantidad
+    de seeds y la menor cantidad de peers; de esta forma puede maximizar la velocidad de descarga al tener más proveedores y menos
+    adversarios tratando de descargar el mismo archivo.
+
+    Dada una lista de torrents publicados por la ICPC, Guffy necesita decidir cuál le conviene descargar primero.
+    ?`Podrías ayudar a Guffy a elegir qué archivo descargar?
 \end{problemDescription}
 
 \begin{inputDescription}
     La primera línea de la entrada contiene un solo entero $N$ ($0 < N \leq 10^4$)
-    representado el número de torrents entre los cuales Guffy debe elegir.
+    que representa el número de torrents entre los cuales Guffy debe elegir.
     Cada torrent es identificado con un número entre $1$ y $N$.
     Las siguientes $N$ líneas describen los torrents.
     La línea $i$-ésima contiene dos enteros $S_i$ y $P_i$ ($0 \leq S \leq 10^4$ y $0 \leq P \leq 10^4$)
-    correspondientes respectivamente a la cantidad de seeds y peers del torrent $i$.
+    que corresponden a la cantidad de seeds y peers del torrent $i$, respectivamente.
 \end{inputDescription}
 
 \begin{outputDescription}
     La salida debe contener un único entero, correspondiente al número
     del torrent con la mayor cantidad de seeds.
-    En caso de empate se debe elegir el torrent con la menor cantidad de peers.
-    Si hay un segundo empate puede imprimirse el número de cualquiera de los torrents ganadores.
+    En caso de empate, se debe elegir el torrent con la menor cantidad de peers.
+    Si hay un segundo empate, puede imprimirse el número de cualquiera de los torrents ganadores.
 \end{outputDescription}
 
 \begin{scoreDescription}
 Este problema no contiene subtareas.
-Se dará puntaje proporcional a la cantidad de casos de prueba correctos siendo 100 el puntaje máximo.
+Se dará puntaje proporcional a la cantidad de casos de prueba correctos, siendo 100 el puntaje máximo.
 \end{scoreDescription}
 
 \begin{sampleDescription}

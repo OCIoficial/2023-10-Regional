@@ -9,22 +9,22 @@
 Francisca es fanática de las paltas.
 Las come al desayuno, al almuerzo y a la cena.
 Con pan, en una ensalada o con leche.
-A veces simplemente pela una palta y se las come a mascadas.
+A veces simplemente pela una palta y se la come a mascadas.
 Cada vez que va a la feria compra una malla entera para así tener suficientes paltas.
 
 Comprar paltas es un proceso complejo.
 Dependiendo de cuándo quieres comerlas, debes elegir entre comprar paltas ya maduras
-listas para consumir o paltas que aún no han madurado para poder consumirlas
+—listas para consumir— o paltas que aún no han madurado para poder consumirlas
 en un par de días más.
-Más aún, como cualquier otra fruta, algunas paltas maduran más rápido que otras haciendo
+Más aún, como cualquier otra fruta, algunas paltas maduran más rápido que otras, haciendo
 todo más difícil.
-Cada vez que va a la feria Francisca tiene que pensar en todo esto y necesita un poco de ayuda
-para poder comprar paltas de forma más eficiente.
+Francisca tiene que pensar en todo esto cada vez que va a la feria, por lo que necesita un poco de ayuda
+para poder comprar las paltas de forma más eficiente.
 
 Francisca quiere comprar una malla de $n$ paltas.
 Enumeraremos cada una de las paltas en la malla con un entero entre $1$ y $n$.
-Además, modelaremos el \emph{estado de maduración} de una palta con un entero mayor o igual que cero,
-donde 0 representa el estado al momento de comprar la malla y cualquier entero mayor que 0
+Además, representaremos el \emph{estado de maduración} de una palta con un entero mayor o igual a cero,
+donde 0 corresponde al estado al momento de comprar la malla y cualquier entero mayor que 0
 indica un grado de madurez mayor.
 Es decir, en un inicio todas las paltas en la malla tienen un estado de maduración igual a 0 y
 el valor irá aumentando con el tiempo.
@@ -41,7 +41,7 @@ $k_{min}$ y menor o igual que $k_{max}$.
 Si el estado de maduración es menor que $k_{min}$, la palta aún está muy verde.
 Si el estado es mayor que $k_{max}$, la palta ya está podrida.
 
-Dadas las tasas de descomposición de las $n$ paltas, tu trabajo es responder a $q$ consultas
+Dadas las tasas de maduración de las $n$ paltas, tu trabajo es responder a $q$ consultas
 del siguiente tipo:
 ¿Cuántas paltas pueden consumirse en el tiempo $t$?
 \end{problemDescription}
@@ -60,10 +60,10 @@ Los valores satisfacen las siguientes restricciones:
 \end{itemize}
 
 La segunda línea contiene $n$ enteros.
-El entero $i$-ésimo corresponde a la tasa de descomposición $r_i$ ($1 \leq r_i \leq 10^4$)
+El entero $i$-ésimo corresponde a la tasa de maduración $r_i$ ($1 \leq r_i \leq 10^4$)
 de la palta $i$-ésima.
 
-Luego vienen $q$ líneas describiendo la consultas.
+Luego vienen $q$ líneas que describen la consultas.
 Cada línea contiene un entero $t$ ($0 \leq t \leq 10^5$).
 La respuesta a la consulta debe corresponder a cuántas paltas pueden consumirse
 en el tiempo $t$.
@@ -86,7 +86,7 @@ fueron entregadas.
 \sampleIO{sample-1}
 \begin{center}
 \begin{minipage}{0.95\textwidth}
-\textbf{Explicación caso de ejemplo 1:} La primera consulta pregunta por cuantas paltas pueden consumirse en el tiempo 3.
+\textbf{Explicación caso de ejemplo 1:} En la primera consulta se pregunta cuántas paltas pueden consumirse en el tiempo 3.
 En este tiempo, las paltas tendrán estados de maduración 3, 6, 9 y 12.
 Como el rango de madurez aceptado es $[6, 10]$, solo dos paltas pueden consumirse (las paltas 2 y 3).
 La siguiente consulta pregunta por el tiempo 7.

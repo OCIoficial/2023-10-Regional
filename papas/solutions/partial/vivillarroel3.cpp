@@ -24,7 +24,7 @@ int main() {
 			}
 		}
 		comida[posactual] = 1;
-		if (j % (n+1) == k % (n+1)) ans += actual;
+		if (j % (n+1) == k ) ans += actual;
 	}
 	cout << ans << endl;
 }

@@ -91,6 +91,9 @@
   manual ; copy attic/manual_cases/st2-2.in
   manual ; copy attic/manual_cases/st3-1.in
 
+  # Worst case to force O(n*k)
+  worst-case; generators/gen_worst_case.py
+
   # Random tests
   rand ; generators/gen_st4_random.py
   rand ; generators/gen_st4_random.py
@@ -107,6 +110,9 @@
   # st3 random tests
   rand-yes ; generators/gen_si.py 10000 100
   rand-yes ; generators/gen_si.py 99285 87
-  rand-yes ; generators/gen_si_strict.py 1000000 100
+  # rand-yes-big was generated used the below. We put it as a manual test case because it takes too
+  # long to generate.
+  # rand-yes ; generators/gen_si_strict.py 1000000 1000
+  rand-yes-big; copy attic/manual_cases/rand-yes-big.in
   rand-no ; generators/gen_no.py 1051 10
   rand-no ; generators/gen_no.py 1000000 10

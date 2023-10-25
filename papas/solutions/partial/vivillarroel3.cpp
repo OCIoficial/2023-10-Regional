@@ -1,3 +1,4 @@
+// @ocimatic should-pass=[st1, st3]
 // solucion cuadratica más rapida
 #include <bits/stdc++.h>
 using namespace std;
@@ -15,7 +16,7 @@ int main() {
 	}
 	long long ans = 0;
 	int actual = 1, posactual;
-	for (int j = 1; j <= p; ++j) {
+	for (int j = 0; j < p; ++j) {
 		long long actual = -1;
 		for (int i = 0; i < p; ++i) {
 			if (!comida[i] && papas[i] > actual) {
@@ -24,7 +25,7 @@ int main() {
 			}
 		}
 		comida[posactual] = 1;
-		if (j % (n+1) == k ) ans += actual;
+		if (j % n  == k - 1) ans += actual; 
 	}
 	cout << ans << endl;
 }

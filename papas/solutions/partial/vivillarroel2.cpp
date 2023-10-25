@@ -1,4 +1,4 @@
-// subtarea 2
+// @ocimatic should-pass=[st2]
 #include <bits/stdc++.h>
 using namespace std;
 

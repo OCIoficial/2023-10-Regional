@@ -18,7 +18,7 @@
 # for tasks where the input consist of a single line to quickly generate test cases manually.
 
 # `script`: A generator script is a file in either python (extension `.py`) or c++ (extension `.cpp`).
-# The file should be placed in `attic/` next to this file. When processing the testplan ocimatic will
+# The file should be placed in `testplan/` next to this file. When processing the testplan ocimatic will
 # run the script with the provided arguments (sys.argv or **argv). The script should then write
 # to the standard output.
 # Generator scripts typically use randomness. To ensure each execution of the testplan generates the
@@ -28,39 +28,54 @@
 # passed as the first argument meaning that the rest of the arguments are "shifted" in one position.
 
 [Subtask 1 - validators/st1.cpp]
+  
   # Use sample data as test
   sample ; copy statement/sample-1.in
   sample ; copy statement/sample-2.in
 
-  # Manual test case
-  manual ; copy attic/manual-1.in
-  manual ; copy attic/manual-2.in
-  manual ; copy attic/manual-3.in
+  # Manual cases
+  manual ; copy testplan/manual_cases/st1-1.in
+  manual ; copy testplan/manual_cases/st1-2.in
+  manual ; copy testplan/manual_cases/st1-3.in
+  manual ; copy testplan/manual_cases/st1-4.in
 
-  # Random tests using first generator
-  # args: [random gen seed] [n] [min val] [max val]
-  rand1 ; random_generator.py 15 30
-  rand1 ; random_generator.py 10 25
-  rand1 ; random_generator.py 20 105
-  rand1 ; random_generator.py 100 49
-  rand1 ; random_generator.py 1000 1999
-  rand1 ; random_generator.py 5432 2424
-  rand1 ; random_generator.py 6425 7968
-  rand1 ; random_generator.py 437 927
-  rand1 ; random_generator.py 274 60
-  rand1 ; random_generator.py 1111 1111
-  rand1 ; random_generator.py 1211 1211
-  rand1 ; random_generator.py 3333 3333
-  rand1 ; random_generator.py 5555 555
+  # Random tests
+  # args: [n] [q] [kmin] [kmax] [r_i max] [t max]
+  rand ; random_gen.py 1000 1000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000 1000 0 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 500000 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 1000 1500 2 1000
+  rand ; random_gen.py 1000 1000 2000 3000 10 1000
+  rand ; random_gen.py 1 1000 0 1000000000 1 100000
 
-  # Random tests using second generator
-  # args: [n] [min seeds] [max seeds] [min peers] [max peers]
-  rand2 ; random_generator2.py 10000 0 10000 0 10000 # unrestricted
-  rand2 ; random_generator2.py 10000 0 10000 0 10000 # unrestricted
-  rand2 ; random_generator2.py 1000 1337 1337 0 10000 # same seeds
-  rand2 ; random_generator2.py 1000 1337 1337 0 10000 # same seeds
-  rand2 ; random_generator2.py 10000 9900 10000 9900 10000 # big numbers
-  rand2 ; random_generator2.py 101 0 101 0 101 # at least 1 repeated seeds
-  rand2 ; random_generator2.py 10000 0 98 0 98 # at least 1 repeated pair (seeds, peers)
-  rand2 ; random_generator2.py 100 0 1 0 1 # many repetitions
-  rand2 ; random_generator2.py 100 0 1 0 1 # many repetitions
+
+[Subtask 2 - validators/st2.cpp]
+# Use sample data as test
+  sample ; copy statement/sample-1.in
+  sample ; copy statement/sample-2.in
+
+  # Manual cases
+  manual ; copy testplan/manual_cases/st1-1.in
+  manual ; copy testplan/manual_cases/st1-2.in
+  manual ; copy testplan/manual_cases/st1-3.in
+  manual ; copy testplan/manual_cases/st1-4.in
+
+  # Random tests
+  # args: [n] [q] [kmin] [kmax] [r_i max] [t max]
+  rand ; random_gen.py 1000 1000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000 1000 0 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 500000 1000000 10000 10000
+  rand ; random_gen.py 1000 1000 1000 1500 2 1000
+  rand ; random_gen.py 1000 1000 2000 3000 10 1000
+  rand ; random_gen.py 1 1000 0 1000000000 1 100000
+  # Subtask-specific
+  rand ; random_gen.py 1000000 100000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000000 100000 0 1000000000 10000 100000
+  rand ; random_gen.py 1000000 100000 0 1000000 10000 10000
+  rand ; random_gen.py 1000000 100000 500000 1000000 10000 10000
+  rand ; random_gen.py 1000000 100000 1000 1500 2 1000
+  rand ; random_gen.py 1000000 100000 1000 1500 2 1000
+  rand ; random_gen.py 1000000 100000 2000 3000 10 1000
+  rand ; random_gen.py 1000000 100000 2000 3000 10 1000
+  
+

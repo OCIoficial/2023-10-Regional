@@ -18,7 +18,7 @@
 # for tasks where the input consist of a single line to quickly generate test cases manually.
 
 # `script`: A generator script is a file in either python (extension `.py`) or c++ (extension `.cpp`).
-# The file should be placed in `attic/` next to this file. When processing the testplan ocimatic will
+# The file should be placed in `testplan/` next to this file. When processing the testplan ocimatic will
 # run the script with the provided arguments (sys.argv or **argv). The script should then write
 # to the standard output.
 # Generator scripts typically use randomness. To ensure each execution of the testplan generates the
@@ -32,9 +32,9 @@
   sample ; copy statement/sample-1.in
 
   # Manual test cases
-  manual ; copy attic/manual_cases/st1-1.in
-  manual ; copy attic/manual_cases/st1-2.in
-  manual ; copy attic/manual_cases/st1-3.in
+  manual ; copy testplan/manual_cases/st1-1.in
+  manual ; copy testplan/manual_cases/st1-2.in
+  manual ; copy testplan/manual_cases/st1-3.in
 
   # Random tests
   rand-no ; generators/gen_st1_no.py 100000
@@ -47,8 +47,8 @@
 
 [Subtask 2 - validators/st2.cpp]
   # Manual test cases
-  manual ; copy attic/manual_cases/st2-1.in
-  manual ; copy attic/manual_cases/st2-2.in
+  manual ; copy testplan/manual_cases/st2-1.in
+  manual ; copy testplan/manual_cases/st2-2.in
 
   # Random tests
   rand-no ; generators/gen_st2_no.py 100000
@@ -65,11 +65,11 @@
   sample ; copy statement/sample-2.in
 
   # Manual test cases
-  manual ; copy attic/manual_cases/st1-1.in
-  manual ; copy attic/manual_cases/st1-2.in
-  manual ; copy attic/manual_cases/st2-1.in
-  manual ; copy attic/manual_cases/st2-2.in
-  manual ; copy attic/manual_cases/st3-1.in
+  manual ; copy testplan/manual_cases/st1-1.in
+  manual ; copy testplan/manual_cases/st1-2.in
+  manual ; copy testplan/manual_cases/st2-1.in
+  manual ; copy testplan/manual_cases/st2-2.in
+  manual ; copy testplan/manual_cases/st3-1.in
 
   # Random tests
   rand-yes ; generators/gen_si.py 10000 100
@@ -85,11 +85,11 @@
   sample ; copy statement/sample-2.in
 
   # Manual test cases
-  manual ; copy attic/manual_cases/st1-1.in
-  manual ; copy attic/manual_cases/st1-2.in
-  manual ; copy attic/manual_cases/st2-1.in
-  manual ; copy attic/manual_cases/st2-2.in
-  manual ; copy attic/manual_cases/st3-1.in
+  manual ; copy testplan/manual_cases/st1-1.in
+  manual ; copy testplan/manual_cases/st1-2.in
+  manual ; copy testplan/manual_cases/st2-1.in
+  manual ; copy testplan/manual_cases/st2-2.in
+  manual ; copy testplan/manual_cases/st3-1.in
 
   # Worst case to force O(n*k)
   worst-case; generators/gen_worst_case.py
@@ -113,6 +113,6 @@
   # rand-yes-big was generated used the below. We put it as a manual test case because it takes too
   # long to generate.
   # rand-yes ; generators/gen_si_strict.py 1000000 1000
-  rand-yes-big; copy attic/manual_cases/rand-yes-big.in
+  rand-yes-big; copy testplan/manual_cases/rand-yes-big.in
   rand-no ; generators/gen_no.py 1051 10
   rand-no ; generators/gen_no.py 1000000 10
